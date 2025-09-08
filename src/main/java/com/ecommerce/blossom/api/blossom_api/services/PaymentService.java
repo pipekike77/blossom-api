@@ -48,7 +48,7 @@ public class PaymentService {
         }
          */
 
-        Payment payment = new Payment();
+        Payment payment = order.getPayment();
         payment.setOrder(order);
         payment.setAmountPaid(order.getTotal());
 
