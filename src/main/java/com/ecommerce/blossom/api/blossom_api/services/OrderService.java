@@ -33,26 +33,6 @@ public class OrderService {
     private final OrderMapper orderMapper;
 
 
-    public List<Order> findAll(){
-        return orderRepository.findAll();
-    }
-
-    public Order findById(Long id){
-        return orderRepository.findById(id).orElse(null);
-    }
-
-    public void saveOrder(Order order){
-        orderRepository.save(order);
-    }
-
-    public void updateOrder(Order order){
-        orderRepository.save(order);
-    }
-
-    public void deleteOrder(Long id) {
-        orderRepository.deleteById(id);
-    }
-
     public OrderResponseDTO createOrder(CreateOrderRequestDTO request) {
         User user = userRepository.findById(request.getUserId())
                 .orElseThrow(() -> new RuntimeException("User not found"));

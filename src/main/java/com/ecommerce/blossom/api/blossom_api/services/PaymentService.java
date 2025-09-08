@@ -22,26 +22,6 @@ public class PaymentService {
     private final PaymentRepository paymentRepository;
     private final OrderRepository orderRepository;
 
-    public List<Payment> findAll(){
-        return paymentRepository.findAll();
-    }
-
-    public Payment findById(Long id){
-        return paymentRepository.findById(id).orElse(null);
-    }
-
-    public void savePayment(Payment payment){
-        paymentRepository.save(payment);
-    }
-
-    public void updatePayment(Payment payment){
-        paymentRepository.save(payment);
-    }
-
-    public void deletePayment(Long id) {
-        paymentRepository.deleteById(id);
-    }
-
     public void processPayment(Order order, boolean success) {
         Payment payment = new Payment();
         payment.setOrder(order);

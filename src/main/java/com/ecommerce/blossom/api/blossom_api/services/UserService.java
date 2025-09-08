@@ -20,32 +20,6 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public List<User> findAll(){
-        return userRepository.findAll();
-    }
-
-    public Optional<User> findByEmail(String email){
-        return userRepository.findByEmail(email);
-    }
-
-    public void saveUser(User user){
-        userRepository.save(user);
-    }
-
-    public User updateUser(Long id, User updatedUser){
-        //userRepository.save(user);
-        return userRepository.findById(id).map(user -> {
-            user.setEmail(updatedUser.getEmail());
-            user.setPassword(updatedUser.getPassword());
-            // otros campos
-            return userRepository.save(user);
-        }).orElseThrow(() -> new RuntimeException("User not found"));
-    }
-
-    public void deleteUser(Long id) {
-        userRepository.deleteById(id);
-    }
-
     public UserProfileDTO getUserProfile(String email) {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));

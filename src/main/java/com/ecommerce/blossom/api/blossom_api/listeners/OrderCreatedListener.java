@@ -19,8 +19,8 @@ public class OrderCreatedListener {
     public void handleOrderCreated(OrderCreatedEvent event) throws InterruptedException {
         Order order = event.getOrder();
 
-        // Simular tiempo de procesamiento (ej: pasarela de pago)
-        Thread.sleep(50000);
+        // Simulate processing time (e.g.: payment gateway)
+        Thread.sleep(15000);
 
         // Simular resultado aleatorio del pago
         boolean success = Math.random() > 0.3;
