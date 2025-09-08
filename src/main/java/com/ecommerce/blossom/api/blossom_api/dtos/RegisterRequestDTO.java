@@ -1,5 +1,6 @@
 package com.ecommerce.blossom.api.blossom_api.dtos;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -7,6 +8,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
+@Schema(hidden = true)
 public class RegisterRequestDTO {
 
     @NotNull(message = "User full name is required")

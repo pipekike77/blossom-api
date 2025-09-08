@@ -37,6 +37,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // Rutas públicas
                         .requestMatchers("/auth/**", "/h2-console/**").permitAll()
+                        .requestMatchers(
+                                "/v3/api-docs/**",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html"
+                        ).permitAll()
 
                         // Rutas accesibles para CUSTOMER (y también ADMIN por jerarquía)
                         .requestMatchers(HttpMethod.GET, "/products/best-selling").hasAnyRole("CUSTOMER", "ADMIN")
@@ -44,7 +49,6 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/products/search").hasAnyRole("CUSTOMER", "ADMIN")
                         .requestMatchers("/orders/**", "/users/**").hasAnyRole("CUSTOMER", "ADMIN")
 
-                        // Todo lo demás requiere ADMIN (por defecto)
                         .anyRequest().hasRole("ADMIN")
                 )
                 .sessionManagement(session -> session
