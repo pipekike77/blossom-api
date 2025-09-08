@@ -1,194 +1,196 @@
-#  Blossom eCommerce API
+# Blossom eCommerce API
 
-Blossom API es una API RESTful para una plataforma de e-commerce desarrollada con Spring Boot. Soporta funcionalidades básicas como autenticación, gestión de productos, órdenes, pagos y usuarios.
+Blossom API is a RESTful API for an e-commerce platform developed with Spring Boot. It supports basic functionalities such as authentication, product management, orders, payments, and users.
 
-##  Descripción
+## Description
 
-Este repositorio contiene la capa backend de un sistema de comercio electrónico. Entre sus características se incluyen:
+This repository contains the backend layer of an e-commerce system. Its features include:
 
-- Gestión de productos  
+- Product management
 
-- Autenticación y registro de usuarios con JWT  
+- User authentication and registration with JWT
 
-- Gestión de órdenes y pagos  
+- Order and payment management
 
-- Historial y estadísticas de usuarios  
+- User history and statistics
 
-- Seguridad con Spring Security  
+- Security with Spring Security
 
-- Documentación automática con OpenAPI / Swagger UI  
+- Automatic documentation with OpenAPI / Swagger UI
 
-- Base de datos embebida H2 para desarrollo y pruebas  
+- Embedded H2 database for development and testing
 
-##  Tecnologías
+## Technologies
 ```bash
-| **Tecnología** | **Versión** |
+| Technology | Version |
 | --- | --- |
 | Java | 17  |
 | --- | --- |
-| Spring Boot | 2.x (compatible) |
+| Spring Boot | 3.1.8 (compatible) |
 | --- | --- |
-| Base de datos | H2 (embebida) |
+| Database | H2 (embedded) |
 | --- | --- |
-| Seguridad | Spring Security + JWT |
+| Security | Spring Security + JWT |
 | --- | --- |
-| Documentación API | springdoc-openapi (Swagger UI) |
+| API Documentation | springdoc-openapi (Swagger UI) |
 | --- | --- |
 | Build | Maven |
 | --- | --- |
 ```
-## Cómo ejecutar el proyecto
+## How to run the project
 
-### **Clonar el repositorio**
+### **Clone the repository**
 ```bash
 git clone <https://github.com/pipekike77/blossom-api.git>
 
 cd blossom-api
 ```
-### **Opción 1: Ejecutar con Maven directamente**
-
+### **Option 1: Run directly with Maven**
+```bash
 ./mvnw spring-boot:run
-
-### **Opción 2: Usar scripts para facilitar la ejecución**
-
-#### **Linux / macOS**
+```
+### **Option 2: Use scripts to facilitate execution**
+### **Linux / macOS**
 ```bash
 chmod +x run.sh
 
 ./run.sh
 ```
-#### **Windows**
+### **Windows**
 
-Haz doble clic en run.bat o ejecútalo desde CMD:
+Double click on run.bat or run it from CMD:
 ```bash
 run.bat
 ```
- ### **Recuerda tener instalado Java 17 o superior.**
+### **Remember to have Java 17 or higher installed.**
 
-##  Estructura del proyecto
+### Project structure
 
-La aplicación correrá en:
+The application will run at:
 
-<http://localhost:8080>
+http://localhost:8080
 
- Estructura del Proyecto 
+Project Structure
 ```bash
 src
 ├── main
 │   ├── java/com.ecommerce.blossom.api
-│   │   ├── config              # Configuraciones generales
-│   │   ├── controllers         # Controladores REST
+│   │   ├── config              # General configurations
+│   │   ├── controllers         # REST controllers
 │   │   ├── dtos                # Data Transfer Objects
-│   │   ├── entities            # Entidades JPA
-│   │   ├── enums               # Enums para atributos fijos
-│   │   ├── events              # Evento orden creada
-│   │   ├── exceptions          # Manejadores y excepciones
-│   │   ├── filters             # Filtros consultas personalizadas Producto
-│   │   ├── listeners           # Evento asíncrono pago de orden
-│   │   ├── mappers             # Mapeo de entidades a DTO
-│   │   ├── repositories        # Interfaces JPA
-│   │   ├── security            # Configuración de seguridad y JWT
-│   │   └── services            # Lógica de negocio
+│   │   ├── entities            # JPA entities
+│   │   ├── enums               # Enums for fixed attributes
+│   │   ├── events              # Order created event
+│   │   ├── exceptions          # Handlers and exceptions
+│   │   ├── filters             # Custom query filters for Product
+│   │   ├── listeners           # Asynchronous order payment event
+│   │   ├── mappers             # Entity to DTO mapping
+│   │   ├── repositories        # JPA interfaces
+│   │   ├── security            # Security and JWT configuration
+│   │   └── services            # Business logic
 │   └── resources
 │       ├── application.properties
 ```
 
-- /src/main/java/... – Código fuente (controladores, servicios, repositorios)  
+- /src/main/java/... – Source code (controllers, services, repositories)
 
-- /src/main/resources/application.properties – Configuración del proyecto   
+- /src/main/resources/application.properties – Project configuration
 
-- /run.sh y /run.bat – Scripts para ejecutar la aplicación fácilmente  
+- /run.sh and /run.bat – Scripts to easily run the application
 
-- /Blossom eCommerce API.postman_collection.json – Colección de Postman para probar la API  
+- /Blossom eCommerce API.postman_collection.json – Postman collection to test the API
 
-## Documentación API (Swagger UI)
+## API Documentation (Swagger UI)
 
-Al iniciar la aplicación, puedes acceder a la documentación interactiva en:
+When starting the application, you can access the interactive documentation at:
 
-<http://localhost:8080/swagger-ui.html>
+http://localhost:8080/swagger-ui.html
 
-Ahí encontrarás todos los endpoints disponibles con sus descripciones, parámetros y modelos.
+There you will find all available endpoints with their descriptions, parameters, and models.
 
-##  Base de datos embebida H2
+## Embedded H2 Database
 
-Para desarrollo y pruebas, se usa la base de datos H2 embebida. Puedes acceder a la consola H2 en:
+For development and testing, the embedded H2 database is used. You can access the H2 console at:
 
 <http://localhost:8080/h2-console>
 ```bash
 - JDBC URL: jdbc:h2:mem:testdb  
 - User: sa  
-- Password: (vacío)  
-```
-
-##  Colección Postman
-
-Incluyo una colección Postman para facilitar pruebas manuales de la API. La puedes importar en Postman:
+- Password: (empty)
+```  
+## Postman Collection
+Include a Postman collection to facilitate manual testing of the API. You can import it into Postman:
 
 Blossom eCommerce API.postman_collection.json
 
-## Configuración
+For testing user ADMIN already created 
+```bash
+email: admin@blossom.com
+password: admin123
+```
 
-Puedes modificar las propiedades de la aplicación en:
+## Configuration
+
+You can modify the application properties at:
 
 src/main/resources/application.properties
 
-Aquí puedes configurar:
+Here you can configure:
 
-- Puerto del servidor  
+- Server port
 
-- Configuración de la base de datos  
+- Database configuration
 
-- Propiedades de seguridad  
+- Security properties
 
-- Otros parámetros  
+- Other parameters
 
-##  Diagrama de base de datos
+## Database Diagram
 
-Aquí está el diagrama ER (Entidad-Relación) de la base de datos para que entiendas la estructura y relaciones.
+The ER (Entity-Relationship) diagram of the database so you can understand the structure and relationships.
 
 <img width="1536" height="1024" alt="Blossom DB ER diagram" src="https://github.com/user-attachments/assets/25f3e9c6-61a1-4f70-8aec-2996ecd49f21" />
 
-## Autenticación
+## Authentication
 
-La API utiliza JWT para proteger los endpoints.
+The API uses JWT to protect endpoints.
 
-Endpoints públicos:
+Public endpoints:
 
-POST /auth/register → Crear nuevo usuario
+POST /auth/register → Create new user
 
-POST /auth/login → Obtener token JWT
+POST /auth/login → Get JWT token
 
-Endpoints protegidos:
+Protected endpoints:
 
-Todos los demás (/products, /orders, /users, etc.) requieren el token en el encabezado:
+All others (/products, /orders, /users, etc.) require the token in the header:
 ```bash
-Authorization: Bearer <tu_token_jwt>
+Authorization: Bearer <your_jwt_token>
 ```
-🧪 Endpoints destacados
+Featured endpoints
 ```bash
-Método	Endpoint	Descripción
-POST	/auth/register	        Registro de usuario
-POST	/auth/login	            Login y obtención de JWT
-GET	    /products	            Obtener todos los productos
-POST	/orders	                Crear nueva orden
-POST	/payments/process	    Procesar pago manual
-GET	    /users/profile	        Obtener perfil de usuario por email
-GET	    /users/order-history	Historial de órdenes del usuario
+Method	Endpoint	            Description
+POST	/auth/register	        User registration
+POST	/auth/login	            Login and obtain JWT
+GET	    /products	            Get all products
+POST	/orders	                Create new order
+POST	/payments/process	    Process manual payment
+GET	    /users/profile	        Get user profile by email
+GET	    /users/order-history	User order history
 ```
-🛠️ Próximas mejoras
+## Upcoming improvements
 
-Agregar soporte para base de datos externa (MySQL / PostgreSQL)
+Add support for external databases (MySQL / PostgreSQL)
 
-Agregar roles y permisos más granulares
+Add more granular roles and permissions
 
-Despliegue en Docker o plataformas cloud
+Deployment with Docker or cloud platforms
 
-## Contribuciones
+##Contributions
 
-¡Las contribuciones son bienvenidas! Puedes abrir issues o pull requests para mejoras o correcciones.
+Contributions are welcome! You can open issues or pull requests for improvements or fixes.
 
-## **Contacto**
+# **Contact**
+If you have questions or comments, contact me at:
 
-Si tienes dudas o comentarios, contáctame en:
-
-- Email: <andresfelipe77@gmailcom>  
+Email: andresfelipe77@gmailcom
