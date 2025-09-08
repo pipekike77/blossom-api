@@ -146,6 +146,8 @@ Aquí puedes configurar:
 
 Aquí está el diagrama ER (Entidad-Relación) de la base de datos para que entiendas la estructura y relaciones.
 
+<img width="1536" height="1024" alt="Blossom DB ER diagram" src="https://github.com/user-attachments/assets/25f3e9c6-61a1-4f70-8aec-2996ecd49f21" />
+
 ## Autenticación
 
 La API utiliza JWT para proteger los endpoints.
