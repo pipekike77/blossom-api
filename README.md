@@ -169,20 +169,20 @@ Authorization: Bearer <your_jwt_token>
 ```
 Featured endpoints
 ```bash
-Method	Endpoint	            Description          Access
-POST	/auth/register	        User registration     Public
-POST	/auth/login	            Login and obtain JWT  Public
-GET	    /products	            Get all products      ADMIN, CUSTOMER
-GET	    /products/{id}	       Get product by id    ADMIN, CUSTOMER
-GET	    /products/best-selling  Get best selling products     ADMIN, CUSTOMER
-DELETE   /products/{id}	       Delete product by id    ADMIN
-PUT   /products/{id}	       Update product by id    ADMIN
-POST   /products	         Create product    ADMIN
-POST	/orders	                Create new order  ADMIN, CUSTOMER
-POST	/payments/process	    Process manual payment  ADMIN, CUSTOMER
-GET	    /users/profile	        Get user profile by email  ADMIN, CUSTOMER
-GET	    /users/top	        Get list o users with most orders  ADMIN, CUSTOMER
-GET	    /users/order-history	User order history  ADMIN, CUSTOMER
+Method	Endpoint	              Description                        Access
+POST	  /auth/register	        User registration                  Public
+POST	  /auth/login	            Login and obtain JWT               Public
+GET	    /products	              Get all products                   ADMIN, CUSTOMER
+GET	    /products/{id}	        Get product by id                  ADMIN, CUSTOMER
+GET	    /products/best-selling  Get best selling products          ADMIN, CUSTOMER
+DELETE  /products/{id}	        Delete product by id               ADMIN
+PUT     /products/{id}	        Update product by id               ADMIN
+POST    /products	              Create product                     ADMIN
+POST	  /orders	                Create new order                   ADMIN, CUSTOMER
+POST	  /payments/process	      Process manual payment             ADMIN, CUSTOMER
+GET	    /users/profile	        Get user profile by email          ADMIN, CUSTOMER
+GET	    /users/top	            Get list o users with most orders  ADMIN, CUSTOMER
+GET	    /users/order-history	  User order history                 ADMIN, CUSTOMER
 ```
 ## Upcoming improvements
 
